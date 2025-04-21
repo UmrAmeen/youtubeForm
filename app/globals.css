@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inputBox {
+  border: solid 1px;
+  margin: 15px;
+}
+
+.myButton {
+  border: solid 1px rgb(10, 9, 9);
+  border-radius: 5px;
+  background-color: rgb(253, 249, 249);
+  color: rgb(24, 21, 21);
+  padding: 5px;
+  margin: 10px;
+}
+.myFormPage,
+label {
+  display: block;
+  margin: 5px;
+}
+.myFormPage,
+input {
+  border: solid 1px;
+  margin-left: 10px;
+}
+.myFormPage {
+  border: solid 2px rgb(211, 173, 173);
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 20px 0 0 20px;
+}
+select {
+  border: solid 1px;
+  margin: 10px;
+  width: 180px;
+}
+.submitButton {
+  border: solid 1px;
+  width: 20%;
+  border-radius: 5px;
+  margin: 5px;
+}
+.channelForm{
+  border: 1px solid green;
+  margin: 15px;
+  padding: 5px;
+  width: 400px;
+}
