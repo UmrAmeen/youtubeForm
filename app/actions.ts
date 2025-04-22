@@ -15,7 +15,7 @@ export async function createChannel(prevFormState: any, formData: FormData) {
 
     const insert = db.prepare("INSERT INTO channel(id, name) VALUES(?, ?)");
 
-    const result = insert.run("100", name);
+    const result = insert.run("14", name);
 
     if (result.lastInsertRowid) {
       return {

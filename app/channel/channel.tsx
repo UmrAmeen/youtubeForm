@@ -1,17 +1,15 @@
 "use client";
 
 import { createChannel } from "@/app/actions";
-import { Components } from "@/app/component";
-import { videos } from "@/app/data/data";
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import {  useActionState, useState } from "react";
 
-export default function ChannelForm() {
-  const [state, formAction, isPending] = useActionState(createChannel, {
+export default function Channel({rows}:any) {
+  const [state, formAction, isPending] =useActionState (createChannel, {
     success: false,
     error: "",
   });
-  const [name, setName] = useState("");
+ 
 
   console.log("state", state);
   // function onSubmit(e: React.FormEvent) {
@@ -22,11 +20,11 @@ export default function ChannelForm() {
     <>
       {state.success ? <div>Success</div> : <div>{state.error}</div>}
       <form className="channelForm">
-        <label >
+        <label>
           channel :
           <select name="channelName">
-            {videos.map((video) => (
-              <option key={video.id}>{video.channel.name}</option>
+            {rows.map((row) => (
+              <option key={row.id}>{row.name}</option>
             ))}
           </select>
         </label>
@@ -35,8 +33,8 @@ export default function ChannelForm() {
           <input
             name="name"
             placeholder="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+           
+           
           />
         </label>
         <button

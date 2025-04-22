@@ -7,7 +7,7 @@ export default function MyPage() {
         youtubeForm
       </Link>
 
-      <Link href="/youtubeForm/channelForm" className="myButton">
+      <Link href="/channel" className="myButton">
         youtubeChannel
       </Link>
     </div>
