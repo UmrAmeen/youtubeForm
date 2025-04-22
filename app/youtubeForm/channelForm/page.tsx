@@ -1,6 +1,7 @@
 "use client";
 
 import { createChannel } from "@/app/actions";
+import { Components } from "@/app/component";
 import { videos } from "@/app/data/data";
 import Link from "next/link";
 import { useActionState, useState } from "react";
@@ -21,9 +22,9 @@ export default function ChannelForm() {
     <>
       {state.success ? <div>Success</div> : <div>{state.error}</div>}
       <form className="channelForm">
-        <label>
+        <label >
           channel :
-          <select>
+          <select name="channelName">
             {videos.map((video) => (
               <option key={video.id}>{video.channel.name}</option>
             ))}

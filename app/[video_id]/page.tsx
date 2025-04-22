@@ -15,10 +15,10 @@ export default async function Page({ params }: { params: any }) {
       <iframe src={youtube.videoUrl} />
       <p className="text-blue-600 font-bold">{youtube.title}</p>
       <div className="flex gap-2">
-        <img
+        {/* <img
           src={youtube.channel.profileUrl}
           className=" w-12 h-12 rounded-full"
-        />
+        /> */}
         <p className="text-secondary-text text-sm">{youtube.channel.name}</p>
       </div>
     </div>
