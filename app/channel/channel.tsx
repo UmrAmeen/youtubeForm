@@ -11,7 +11,7 @@ export default function Channel({rows}:any) {
   });
  
 
-  console.log("state", state);
+  // console.log("state", state);
   // function onSubmit(e: React.FormEvent) {
   //   e.preventDefault();
   // }
@@ -22,9 +22,9 @@ export default function Channel({rows}:any) {
       <form className="channelForm">
         <label>
           channel :
-          <select name="channelName">
+          <select >
             {rows.map((row) => (
-              <option key={row.id}>{row.name}</option>
+              <option key={row.id} >{row.name}</option>
             ))}
           </select>
         </label>

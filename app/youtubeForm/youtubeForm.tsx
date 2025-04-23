@@ -3,11 +3,12 @@ import { useActionState, useState } from "react";
 import Link from "next/link";
 import { createYoutubeForm } from "../youtubeAction";
 
-export default function MyFormPage({rows}:any) {
+export default function MyFormPage({ rows }: any) {
   const [state, formAction, isPending] = useActionState(createYoutubeForm, {
     success: false,
     error: "",
   });
+  
   return (
     <div>
       {state.success ? <div>Success</div> : <div>{state.error}</div>}
@@ -16,7 +17,9 @@ export default function MyFormPage({rows}:any) {
           channel:
           <select>
             {rows.map((row) => (
-              <option key={row.id}>{row.name}</option>
+              <option key={row.id} value="channel">
+                {row.name}
+              </option>
             ))}
           </select>
         </label>
