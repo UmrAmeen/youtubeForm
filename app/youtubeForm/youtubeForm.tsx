@@ -15,9 +15,9 @@ export default function MyFormPage({ rows }: any) {
       <form className="myFormPage">
         <label>
           channel:
-          <select>
+          <select name="channel" >
             {rows.map((row) => (
-              <option key={row.id} value="channel">
+              <option key={row.id} value={row.id}>
                 {row.name}
               </option>
             ))}

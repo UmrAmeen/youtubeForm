@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export default function Youtube({ row }: any) {
+export default function Youtube({ row,channelRow }: any) {
+  console.log("channelRow",channelRow)
   return (
     <div className="flex flex-col gap-2">
       <Link href={row.title}>
@@ -13,8 +14,8 @@ export default function Youtube({ row }: any) {
         <p className="text-blue-600 font-bold">{row.title}</p>
       </Link>
       <div className="flex gap-2">
-        <img src={row.profileUrl} className=" w-12 h-12 rounded-full" />
-        <p className="text-secondary-text text-sm">{row.name}</p>
+        <img src={channelRow.profileUrl} className=" w-12 h-12 rounded-full" />
+        <p className="text-secondary-text text-sm">{channelRow.id}</p>
       </div>
     </div>
   );

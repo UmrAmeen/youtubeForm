@@ -2,12 +2,12 @@
 import { useState } from "react";
 import Youtube from "./youtube";
 
-export default function SearchBar({ rows }: any) {
+export default function SearchBar({ rows,channelRow }: any) {
   const [search, setSearch] = useState("");
   const filteredList = rows.filter((row) =>
     row.title.toLowerCase().includes(search.toLowerCase())
   );
-  console.log("row", rows);
+  //  console.log("channelRow", channelRow);
   // console.log(filteredList);
   return (
     <div>
@@ -26,7 +26,7 @@ export default function SearchBar({ rows }: any) {
           key={row.id}
           className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(400px,1fr))]"
         >
-          <Youtube row={row} />
+          <Youtube row={row} channelRow={channelRow}/>
         </div>
       ))}
     </div>

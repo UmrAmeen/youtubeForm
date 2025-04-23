@@ -2,14 +2,13 @@
 
 import { createChannel } from "@/app/actions";
 import Link from "next/link";
-import {  useActionState, useState } from "react";
+import { useActionState, useState } from "react";
 
-export default function Channel({rows}:any) {
-  const [state, formAction, isPending] =useActionState (createChannel, {
+export default function Channel({ rows }: any) {
+  const [state, formAction, isPending] = useActionState(createChannel, {
     success: false,
     error: "",
   });
- 
 
   // console.log("state", state);
   // function onSubmit(e: React.FormEvent) {
@@ -22,20 +21,15 @@ export default function Channel({rows}:any) {
       <form className="channelForm">
         <label>
           channel :
-          <select >
+          <select>
             {rows.map((row) => (
-              <option key={row.id} >{row.name}</option>
+              <option key={row.id}>{row.name}</option>
             ))}
           </select>
         </label>
         <label>
           name:
-          <input
-            name="name"
-            placeholder="name"
-           
-           
-          />
+          <input name="name" placeholder="name" />
         </label>
         <button
           disabled={isPending}
