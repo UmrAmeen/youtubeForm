@@ -2,6 +2,7 @@
 import { useActionState, useState } from "react";
 import Link from "next/link";
 import { createYoutubeForm } from "../youtubeAction";
+import DropDown from "../dropDown/dropDown";
 
 export default function MyFormPage({ rows }: any) {
   const [state, formAction, isPending] = useActionState(createYoutubeForm, {
@@ -13,17 +14,7 @@ export default function MyFormPage({ rows }: any) {
     <div>
       {state.success ? <div>Success</div> : <div>{state.error}</div>}
       <form className="myFormPage">
-        <label>
-          channel:
-          <select name="channel" >
-            {rows.map((row) => (
-              <option key={row.id} value={row.id}>
-                {row.name}
-              </option>
-            ))}
-          </select>
-        </label>
-
+       <DropDown rows={rows}/>
         <label>
           title:
           <input name="title" placeholder="title" />

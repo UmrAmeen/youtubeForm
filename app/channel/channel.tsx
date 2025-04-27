@@ -3,6 +3,7 @@
 import { createChannel } from "@/app/actions";
 import Link from "next/link";
 import { useActionState, useState } from "react";
+import DropDown from "../dropDown/dropDown";
 
 export default function Channel({ rows }: any) {
   const [state, formAction, isPending] = useActionState(createChannel, {
@@ -19,14 +20,7 @@ export default function Channel({ rows }: any) {
     <>
       {state.success ? <div>Success</div> : <div>{state.error}</div>}
       <form className="channelForm">
-        <label>
-          channel :
-          <select>
-            {rows.map((row) => (
-              <option key={row.id}>{row.name}</option>
-            ))}
-          </select>
-        </label>
+       <DropDown rows={rows} />
         <label>
           name:
           <input name="name" placeholder="name" />

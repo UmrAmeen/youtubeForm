@@ -8,14 +8,14 @@ export async function createChannel(prevFormState: any, formData: FormData) {
     console.log("name", name);
 
     const data = db.prepare("SELECT * FROM channel WHERE name = ?").get(name);
-    console.log("data", data);
+    // console.log("data", data);
     if (data) {
       throw new Error("channel name is already taken");
     }
 
     const insert = db.prepare("INSERT INTO channel(id, name) VALUES(?, ?)");
 
-    const result = insert.run("14", name);
+    const result = insert.run("17", name);
 
     if (result.lastInsertRowid) {
       return {

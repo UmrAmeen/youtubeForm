@@ -1,12 +1,17 @@
 import Link from "next/link";
 
-export default function Youtube({ row,channelRow }: any) {
-  console.log("channelRow",channelRow)
+export default function Youtube({ row, channelRow }: any) {
+  // console.log("channelRow",channelRow)
   return (
     <div className="flex flex-col gap-2">
       <Link href={row.title}>
         <div className="relative">
-          <img src={row.thumbnailUrl} className="block w-full" />
+          {row.thumbnailUrl ? (
+            <img src={row.thumbnailUrl} className="block w-full" />
+          ) : (
+            ""
+          )}
+
           <div className="absolute bottom-6 right-2 bg-secondary-dark text-secondary text-sm px-0.5 rounded text-red-600">
             {row.duration}
           </div>
