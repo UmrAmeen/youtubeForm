@@ -2,7 +2,7 @@
 
 import { createChannel } from "@/app/actions";
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import DropDown from "../dropDown/dropDown";
 
 export default function Channel({ rows }: any) {
